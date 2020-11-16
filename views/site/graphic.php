@@ -28,7 +28,7 @@
 				<td><?php echo round($amountOfInterestPaid*$i, 2); ?></td>
 
 				<td><?php echo round($amountInMonth*$i, 2); ?></td>
-				<td><?php echo round($principalBalance, 2);
+				<td><?php echo round($allSum-($amountInMonth*$i), 2);
 			        }  ?></td>
 			</tr>
 			</tbody>
