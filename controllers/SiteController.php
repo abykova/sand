@@ -101,17 +101,28 @@ class SiteController extends Controller
 		$allSum               = ($summa+$amountOfInterestPaid);
 		$principalBalance     = $this->principalBalance($allSum, $amountInMonth, $mounth);
 
+
+		//Платёж в месяц
+		$money = $allSum/$mounth;
+
+		//Сумма погашаемых процентов
+		$interestPaid = $amountOfInterestPaid/$mounth;
+
+		//Сумма погашаемого основного долга
+
+		//Остаток основного долга
+
 		return $this->render('graphic', [
 			'date'                 => $date,
 			'mounth'               => $mounth,
 			'allSum'               => $allSum,
-			'amountInMonth'        => $amountInMonth,
+			'amountInMonth'        => $money,
 			'principalBalance'     => $principalBalance,
-			'amountOfInterestPaid' => $amountOfInterestPaid,
+			'amountOfInterestPaid' => $interestPaid,
 		]);
 	}
 
-	//сумма погашенных процентов
+	//всего погашенных процентов
 	public function amountOfInterestPaid($apr, $summa, $amountInMonth)
 	{
 		$sumDayInMonth    = 30;
