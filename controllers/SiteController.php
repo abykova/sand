@@ -100,17 +100,9 @@ class SiteController extends Controller
 		$amountOfInterestPaid = $this->amountOfInterestPaid($apr, $summa, $amountInMonth);
 		$allSum               = ($summa+$amountOfInterestPaid);
 		$principalBalance     = $this->principalBalance($allSum, $amountInMonth, $mounth);
+		$money                = $allSum/$mounth;
+		$interestPaid         = $amountOfInterestPaid/$mounth;
 
-
-		//Платёж в месяц
-		$money = $allSum/$mounth;
-
-		//Сумма погашаемых процентов
-		$interestPaid = $amountOfInterestPaid/$mounth;
-
-		//Сумма погашаемого основного долга
-
-		//Остаток основного долга
 
 		return $this->render('graphic', [
 			'date'                 => $date,
@@ -137,17 +129,7 @@ class SiteController extends Controller
 	//остаток основного долга
 	public function principalBalance($allSum, $amountInMonth, $mounth = null)
 	{
-		//вся сумма должна уменьшаться каждый месяц
-
-		if(!empty($mounth))
-		{
-			$principalBalance = 1;
-		}
-
-
-
 		$principalBalance = $allSum - $amountInMonth;
-
 		return $principalBalance;
 	}
 

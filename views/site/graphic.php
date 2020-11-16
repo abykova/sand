@@ -15,7 +15,6 @@
 			</tr>
 			</thead>
 
-
             <?php for ($i = 1; $i <= $mounth; $i++)
 			        { ?>
             <tbody>
