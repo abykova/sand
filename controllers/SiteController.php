@@ -84,8 +84,7 @@ class SiteController extends Controller
 
 	public function actionGraphic()
 	{
-		$id = 6;
-
+//		$id     = 6;
 //		$date   = $this->findModel($id)->date;
 //		$summa  = $this->findModel($id)->sum;
 //		$mounth = $this->findModel($id)->timing;
