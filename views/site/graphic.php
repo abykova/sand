@@ -1,3 +1,8 @@
+<?php
+
+$this->title = 'График';
+?>
+
 <div class="site-index">
 
 	<div class="body-content">

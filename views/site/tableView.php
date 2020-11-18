@@ -2,6 +2,7 @@
 
 use yii\grid\GridView;
 
+$this->title = 'Таблица';
 ?>
 
 <div class="site-index">

@@ -30,7 +30,6 @@ $this->title = 'My Yii Application';
 
         <div class="form-group">
             <div class="col-lg-offset-1 col-lg-11">
-                не рабоатет кнопка
 				<?= Html::submitButton('Расчитать', ['class' => 'btn btn-primary', 'name' => 'btn']) ?>
             </div>
         </div>
