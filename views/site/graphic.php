@@ -24,16 +24,18 @@ $this->title = 'График';
 			$i++)
 			{ ?>
             <tbody>
+
             <tr>
                 <th scope="row"><?php echo $i; ?></th>
                 <td><?php echo $i; ?></td>
                 <td><?php echo $date; ?></td>
-                <td><?php echo round($amountInMonth, 2); ?></td>
-                <td><?php echo round($amountOfInterestPaid * $i, 2); ?></td>
-                <td><?php echo round($amountInMonth * $i, 2); ?></td>
-                <td><?php echo round($allSum - ($amountInMonth * $i), 2);
-					} ?></td>
+                <td><?php echo $amountInMonth; ?></td>
+                <td><?php echo $amountOfInterestPaid * $i; ?></td>
+                <td><?php echo $amountInMonth * $i; ?></td>
+                <td><?php echo $allSum - ($amountInMonth * $i); ?></td>
             </tr>
+
+			<?php } ?>
             </tbody>
         </table>
     </div>

@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Grafics;
 use app\models\Infographic;
 use Yii;
 use yii\data\ActiveDataProvider;
@@ -84,16 +85,17 @@ class SiteController extends Controller
 
 	public function actionGraphic()
 	{
-//		$id     = 6;
-//		$date   = $this->findModel($id)->date;
-//		$summa  = $this->findModel($id)->sum;
-//		$mounth = $this->findModel($id)->timing;
-//		$apr    = $this->findModel($id)->apr;
+		$id     = 6;
+		$date   = $this->findModel($id)->date;
+		$summa  = $this->findModel($id)->sum;
+		$mounth = $this->findModel($id)->timing;
+		$apr    = $this->findModel($id)->apr;
 
-		$date   = '16.11.2020';
-		$summa  = '500000';
-		$mounth = '6';
-		$apr    = '9.3';
+		$model = new Grafics();
+
+		if ($model->load(Yii::$app->request->post()) && $model->save()) {
+			return $this->redirect(['tableView', 'dataProvider' => $this->dataProvider()]);
+		}
 
 		$amountInMonth        = $summa/$mounth;
 		$amountOfInterestPaid = $this->amountOfInterestPaid($apr, $summa, $amountInMonth);
