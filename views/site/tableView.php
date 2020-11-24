@@ -18,6 +18,8 @@ $this->title = 'Таблица';
 				'timing',
 				'apr',
 
+				['class' => 'yii\grid\ActionColumn'],
+
 			],
 		]); ?>
 
